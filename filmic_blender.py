@@ -12,9 +12,16 @@ bl_info = {
 
 import bpy
 import os
+from sys import platform
 
 url = "https://github.com/sobotka/filmic-blender/archive/master.zip"
-cpath = os.path.join(os.path.dirname(bpy.app.binary_path), "2.78", "datafiles")
+
+blender_version = '.'.join(str(n) for n in bpy.app.version[:2])
+
+if platform == 'darwin':
+    cpath = os.path.join(os.path.abspath(os.path.join(bpy.app.binary_path, '../..')), 'Resources', blender_version, 'datafiles')
+else:
+    cpath = os.path.join(os.path.dirname(bpy.app.binary_path), blender_version, "datafiles")
 cmpath = os.path.join(cpath, "colormanagement")
 
 def filmic_is_installed():
