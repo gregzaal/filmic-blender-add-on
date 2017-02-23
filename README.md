@@ -12,3 +12,5 @@ If you already have Filmic Blender installed, the button won't even show up. Use
 - or if you do not know how to copy paste ;)
 
 The existing `colormanagement` folder will be renamed to `colormanagement_old` just in case.
+
+If you ever want to update Filmic Blender, just press *Spacebar* and search for *Get Filmic Blender*.
