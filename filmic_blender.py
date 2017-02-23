@@ -1,5 +1,5 @@
 bl_info = {
-    "name": "Filmic Blender",
+    "name": "Install Filmic Blender",
     "description": "A simple add-on that can download and install Filmic Blender",
     "author": "Greg Zaal",
     "version": (0, 1),
@@ -31,11 +31,6 @@ class FBDownloadFilmic(bpy.types.Operator):
         td = bpy.app.tempdir
         if not os.path.exists(td):
             os.makedirs(td)
-
-        if filmic_is_installed():
-            self.report({'ERROR'}, "Looks like Filmic Blender is already installed")
-            return {'CANCELLED'}
-
 
         from urllib.request import urlretrieve
         dfile = os.path.join(td, 'filmic_blender.zip')
