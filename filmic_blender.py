@@ -62,10 +62,15 @@ class FBDownloadFilmic(bpy.types.Operator):
 def ui(self, context):
     if not filmic_is_installed():
         layout = self.layout
-        col = layout.column()
-        col.scale_y=1.5
-        col.operator('filmic_blender.get', icon='SEQ_CHROMA_SCOPE')
-        col.separator()
+        box = layout.box()
+        col = box.column(align=True)
+        row = col.row()
+        row.scale_y=1.5
+        row.alignment = 'CENTER'
+        row.operator('filmic_blender.get', icon='SEQ_CHROMA_SCOPE')
+        row = col.row()
+        row.alignment = 'CENTER'
+        row.label("Please restart Blender when it's done")
 
 def register():
     bpy.utils.register_module(__name__)
