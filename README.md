@@ -1,3 +1,7 @@
+**This add-on is deprecated as filmic is now included in Blender by default.**
+
+----
+
 # Filmic Blender Add-on
 
 [**Download me :)**](https://raw.githubusercontent.com/gregzaal/filmic-blender-add-on/master/filmic_blender.py) (Right click, Save As)
